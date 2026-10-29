@@ -1,1 +1,78 @@
-
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juno PM — Monthly Executive Findings</title>
+  <style>
+    :root { color-scheme: light; --ink: #14233b; --muted: #62718a; --line: #e2e8f0; --paper: #ffffff; --wash: #f3f6fb; --blue: #2857c5; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--wash); color: var(--ink); font: 15px/1.5 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { width: min(1120px, calc(100% - 40px)); margin: 56px auto; }
+    .eyebrow { margin: 0 0 8px; color: var(--blue); font-size: 12px; font-weight: 750; letter-spacing: .11em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(28px, 4vw, 38px); letter-spacing: -.035em; }
+    .intro { margin: 10px 0 28px; color: var(--muted); }
+    .panel { overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); box-shadow: 0 8px 28px rgba(20, 35, 59, .05); }
+    .panel-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; border-bottom: 1px solid var(--line); }
+    h2 { margin: 0; font-size: 16px; }
+    .status { display: inline-flex; align-items: center; gap: 8px; color: #76540c; background: #fff7df; border: 1px solid #f0dfad; border-radius: 999px; padding: 6px 10px; font-size: 12px; font-weight: 650; white-space: nowrap; }
+    .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #d39a19; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 680px; }
+    th { padding: 14px 18px; background: #f8faff; color: #50617b; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: .04em; }
+    td { padding: 15px 18px; border-top: 1px solid var(--line); }
+    .muted-note { color: var(--muted); font-size: 12px; }
+    .insights { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; }
+    .insight-card { padding: 20px 22px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); box-shadow: 0 8px 28px rgba(20, 35, 59, .04); }
+    .insight-card h2 { margin-bottom: 12px; }
+    .insight-card p { margin: 0; color: var(--muted); }
+    .insight-card ul, .insight-card ol { margin: 0; padding-left: 20px; }
+    .insight-card li + li { margin-top: 9px; }
+    .priority { display: inline-block; margin-right: 6px; color: var(--blue); font-weight: 750; }
+    footer { margin: 14px 2px 0; color: var(--muted); font-size: 12px; }
+    @media (max-width: 640px) { main { width: min(100% - 24px, 1120px); margin: 30px auto; } .panel-head { align-items: flex-start; flex-direction: column; } .insights { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Juno PM · Executive dashboard</p>
+    <h1>Monthly findings</h1>
+    <p class="intro">Findings sourced only from the Juno PM GitHub repository.</p>
+    <section class="panel" aria-labelledby="findings-title">
+      <div class="panel-head">
+        <h2 id="findings-title">Problem areas</h2>
+        <span class="status">Synthetic examples</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Serial #</th><th scope="col">Problem Area</th><th scope="col"># of customers impacted</th><th scope="col">Source</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Difficulty managing notification volume</td><td>12 <span class="muted-note">(example)</span></td><td>Synthetic example — no source record</td></tr>
+            <tr><td>2</td><td>Unclear access setup for shared workspaces</td><td>8 <span class="muted-note">(example)</span></td><td>Synthetic example — no source record</td></tr>
+            <tr><td>3</td><td>Difficulty finding the latest project decisions</td><td>5 <span class="muted-note">(example)</span></td><td>Synthetic example — no source record</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <div class="insights">
+      <section class="insight-card" aria-labelledby="risks-title">
+        <h2 id="risks-title">Major risks</h2>
+        <ul>
+          <li><strong>Examples are not evidence:</strong> the rows and impact counts above are fictional and must not be presented as customer findings.</li>
+          <li><strong>Actual priority is unknown:</strong> no source-backed Jira or Slack records are attached to these examples, so they cannot establish a real problem ranking.</li>
+        </ul>
+      </section>
+      <section class="insight-card" aria-labelledby="recommendations-title">
+        <h2 id="recommendations-title">Recommendations and priorities</h2>
+        <ol>
+          <li><span class="priority">Priority 1</span> Replace each synthetic row with a finding tied to a Jira key or Slack ticket ID.</li>
+          <li><span class="priority">Priority 2</span> Use customer-impact counts only when the source evidence supports them.</li>
+          <li><span class="priority">Priority 3</span> Rank actual problem areas High to Low after evidence is available; mark ambiguous evidence <strong>NEEDS CLARIFICATION</strong>.</li>
+        </ol>
+        <p style="margin-top: 14px"><strong>Actual problem-area ranking:</strong> More info needed.</p>
+      </section>
+    </div>
+    <footer>All rows and counts are fictional examples for layout demonstration only. Replace them with source-backed data before executive use. Each actual finding needs a supporting Slack ticket ID or Jira key. Instructions: <a href="https://github.com/shikhamath/juno-pm/blob/main/01-prompting/skill-file.md">Juno PM skill file</a>.</footer>
+  </main>
+</body>
+</html>
